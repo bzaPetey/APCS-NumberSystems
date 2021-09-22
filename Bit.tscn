@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Bit.cs" type="Script" id=1]
+[ext_resource path="res://DFbebas.tres" type="DynamicFont" id=2]
+
+[node name="Bit 1" type="ColorRect"]
+margin_left = 588.735
+margin_top = 212.951
+margin_right = 628.735
+margin_bottom = 252.951
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+value = 1
+
+[node name="BitValue" type="Label" parent="."]
+margin_top = 57.0
+margin_right = 40.0
+margin_bottom = 71.0
+custom_fonts/font = ExtResource( 2 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="gui_input" from="." to="." method="_on_Bit_gui_input"]

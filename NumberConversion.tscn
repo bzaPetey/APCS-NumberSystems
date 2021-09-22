@@ -1,0 +1,87 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Bit.tscn" type="PackedScene" id=1]
+[ext_resource path="res://lblDecimal.cs" type="Script" id=2]
+[ext_resource path="res://lblHex.cs" type="Script" id=3]
+[ext_resource path="res://DFbebas.tres" type="DynamicFont" id=4]
+
+[node name="NumberConversion" type="Node2D"]
+
+[node name="Bit 1" parent="." instance=ExtResource( 1 )]
+margin_top = 213.0
+margin_bottom = 253.0
+
+[node name="Bit 2" parent="." instance=ExtResource( 1 )]
+margin_left = 536.735
+margin_top = 213.0
+margin_right = 576.735
+margin_bottom = 253.0
+value = 2
+
+[node name="Bit 3" parent="." instance=ExtResource( 1 )]
+margin_left = 487.027
+margin_top = 213.0
+margin_right = 527.027
+margin_bottom = 253.0
+value = 4
+
+[node name="Bit 4" parent="." instance=ExtResource( 1 )]
+margin_left = 435.027
+margin_top = 213.0
+margin_right = 475.027
+margin_bottom = 253.0
+value = 8
+
+[node name="Bit 5" parent="." instance=ExtResource( 1 )]
+margin_left = 358.17
+margin_top = 213.0
+margin_right = 398.169
+margin_bottom = 253.0
+value = 16
+
+[node name="Bit 6" parent="." instance=ExtResource( 1 )]
+margin_left = 306.17
+margin_top = 213.0
+margin_right = 346.17
+margin_bottom = 253.0
+value = 32
+
+[node name="Bit 7" parent="." instance=ExtResource( 1 )]
+margin_left = 256.461
+margin_top = 213.0
+margin_right = 296.461
+margin_bottom = 253.0
+value = 64
+
+[node name="Bit 8" parent="." instance=ExtResource( 1 )]
+margin_left = 204.461
+margin_top = 213.0
+margin_right = 244.461
+margin_bottom = 253.0
+value = 128
+
+[node name="lblDecimal" type="Label" parent="."]
+margin_left = 654.748
+margin_top = 229.903
+margin_right = 694.748
+margin_bottom = 243.903
+custom_fonts/font = ExtResource( 4 )
+text = "0"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lblHex" type="Label" parent="."]
+margin_left = 399.396
+margin_top = 312.998
+margin_right = 439.396
+margin_bottom = 326.998
+custom_fonts/font = ExtResource( 4 )
+text = "0"
+align = 1
+valign = 1
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
