@@ -13,6 +13,10 @@ config_version=4
 config/name="APCS-NumberSystems"
 config/icon="res://icon.png"
 
+[autoload]
+
+CS="*res://Scripts/CustomSignals.cs"
+
 [physics]
 
 common/enable_pause_aware_picking=true

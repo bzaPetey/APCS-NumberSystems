@@ -8,36 +8,30 @@ public class Bit : ColorRect
     [Export]int value = 0;
 
     private Label bitValue;
-    private lblDecimal decimalDisplay;
-    private lblHex hexDisplay;
+    private CustomSignals cs;
 
 
 
     public override void _Ready()
     {
-        this.Color = offColor;   
+        cs = GetNode<CustomSignals>("/root/CS");
         bitValue = GetNode<Label>("BitValue");
-        hexDisplay = GetNode<lblHex>("../lblHex");
-        decimalDisplay = GetNode<lblDecimal>("../lblDecimal");
+        this.Color = offColor;
     }
 
 
 
-    //on_click_signal
     public void _on_Bit_gui_input(InputEventMouseButton e) {
         if(e.Pressed) {
-            GD.Print(value);
             if(this.Color == offColor) {
                 this.Color = onColor;
                 bitValue.Text = "1";
-                decimalDisplay.UpdateTotal(value);
-                hexDisplay.UpdateTotal(value);
+                cs.EmitSignal(nameof(CustomSignals.BitChanged), value);
             }
             else {
                 this.Color = offColor;
                 bitValue.Text = "0";
-                decimalDisplay.UpdateTotal(-value);
-                hexDisplay.UpdateTotal(-value);
+                cs.EmitSignal(nameof(CustomSignals.BitChanged), -value);
             }
         }
     }
